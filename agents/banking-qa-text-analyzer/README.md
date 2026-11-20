@@ -2,11 +2,11 @@
 
 A compact, recruiter-ready **AI-901 Python SDK Proof of Concept** directly aligned with the Microsoft Learn module **`Get started with text analysis in Azure`** — applied to a real **Banking & IT QA** workflow.
 
-## Real-World Banking & QA Use Case
-Before storing customer support tickets in QA dashboards or forwarding them to an LLM, financial teams must protect customer privacy and prioritize urgent complaints. This 100-line Python lab demonstrates three Azure AI Language capabilities in one pass:
-1. **PII Detection & Redaction (`recognize_pii_entities`):** Automatically masks names, emails, phone numbers, and account numbers *(Responsible AI — Privacy & Security)*.
-2. **Sentiment Analysis (`analyze_sentiment`):** Flags negative complaints for immediate QA escalation.
-3. **Key Phrase Extraction (`extract_key_phrases`):** Extracts core complaint topics (`duplicate wire transfer fee`, `online banking PIN`) for automated QA categorization.
+## Real-World Banking & QA Use Case (Privacy-First Chained Pipeline)
+Before storing customer support tickets in QA dashboards or forwarding them to an LLM, financial teams must protect customer privacy and prioritize urgent complaints. This Python lab implements a **fail-closed 3-step QA pipeline**:
+1. **Step 1 — PII Detection & Redaction FIRST (`recognize_pii_entities`):** Automatically masks names, emails, phone numbers, and account numbers *(Responsible AI — Privacy & Security)*. If redaction errors, the pipeline fails closed and never forwards raw text.
+2. **Step 2 — Downstream NLP on Redacted Text Only (`analyze_sentiment` & `extract_key_phrases`):** Analyzes **only** `pii.redacted_text` so confidential customer details never leak into analytics tags or logs.
+3. **Step 3 — Automated QA PII Leak Check:** Programmatically asserts that zero detected PII entities appear in the redacted text or extracted key phrases (`QA PII Leak Check: PASS`).
 
 ---
 

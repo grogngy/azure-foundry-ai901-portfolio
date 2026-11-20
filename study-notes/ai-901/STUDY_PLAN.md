@@ -42,8 +42,7 @@ Notes folder: [02-foundry-solutions/](02-foundry-solutions/README.md)
   - Stateless models vs. stateful Foundry Agents, `get_openai_client`, `conversations.create()`, `responses.create()`
   - [x] Interactive multi-turn `while` loop implemented across `poc1-starter`, `expenses-agent`, and `text-to-image-agent`
 - [ ] **2.4 Text, Speech, Vision & Information Extraction**
-  - [x] *Lab scaffolded:* `agents/banking-qa-text-analyzer` (`azure-ai-textanalytics` — PII redaction, sentiment, key phrases)
-  - [ ] Install `azure-ai-textanalytics` and run live test
+  - [x] *Lab completed & verified live:* `agents/banking-qa-text-analyzer` (`azure-ai-textanalytics` — chained fail-closed PII redaction, sentiment, key phrases, automated QA leak check)
   - [ ] Document Intelligence / Azure Content Understanding
 - [ ] **2.5 Reading Basic Python & REST/SDK Snippets**
   - Imports, `.env` variables, `AIProjectClient`, REST headers/JSON payloads, Entra ID (`DefaultAzureCredential`)

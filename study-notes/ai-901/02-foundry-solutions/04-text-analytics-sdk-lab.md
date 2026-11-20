@@ -54,3 +54,10 @@ When reading any Azure AI Language snippet on AI-901, scan for three parts:
    * *Endpoint note:* Uses the **AI Services / Language root endpoint** (`https://<resource>.services.ai.azure.com/` or `https://<resource>.cognitiveservices.azure.com/`), NOT the `/api/projects/<project>` sub-path.
    * *RBAC note:* Passwordless `DefaultAzureCredential()` requires the **Cognitive Services User** role on the Azure resource; otherwise use `AzureKeyCredential(api_key)` from `.env`.
 3. **Method Call & Loop:** Pass a Python `list` of strings (e.g., `client.analyze_sentiment(documents)`), loop through the results, check `if not doc.is_error`, and print the structured fields.
+
+---
+
+## 4. Responsible AI & IT QA Lesson Learned (Chained Redaction)
+* **Anti-Pattern (Parallel Calls on Raw Text):** Running `recognize_pii_entities` and `extract_key_phrases` on the same unredacted input allows PII (such as customer names and emails) to leak into extracted key phrases and downstream logs.
+* **Best Practice (Fail-Closed Privacy-First Pipeline):** Run `recognize_pii_entities` **first**, pass **only** `pii.redacted_text` into `analyze_sentiment`, `extract_key_phrases`, and any LLM prompt, and run an automated QA check confirming zero detected PII strings appear downstream.
+* **QA Edge-Case Awareness:** Automated PII detectors can classify numeric strings differently (for example, masking a 10-digit account number under `PhoneNumber` at 65% confidence)—highlighting why human QA validation and confidence-score testing are essential in banking AI systems.
