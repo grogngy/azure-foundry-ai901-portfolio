@@ -22,6 +22,7 @@
 | **Finance Expenses Assistant** | Text | Multi-turn finance/expense assistant built on Microsoft Foundry. | Stateful conversations, finance workflow support, Entra ID auth | [agents/expenses-agent](agents/expenses-agent/) |
 | **Text-to-Image POC Agent** | Text / Multimodal | Interactive prompt agent for image generation workflows in Foundry. | Generative vision workflows, multi-turn Responses API | [agents/text-to-image-agent](agents/text-to-image-agent/) |
 | **POC1 Starter Agent** | Text | Multi-turn conversational baseline using Foundry Projects SDK. | Conversation threads, `DefaultAzureCredential`, `.env` config | [agents/poc1-starter](agents/poc1-starter/) |
+| **Banking QA Ticket Triage & PII Redactor** | NLP SDK Lab | AI-901 Python SDK POC for banking complaints (PII masking, sentiment, key phrases). | `azure-ai-textanalytics`, Responsible AI privacy, QA priority triage | [agents/banking-qa-text-analyzer](agents/banking-qa-text-analyzer/) |
 
 *(Roadmap: Wrap Foundry & Azure AI Python agents in FastAPI endpoints to power a modular **Shipkit.ai / Next.js + Supabase** web portfolio.)*
 
