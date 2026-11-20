@@ -1,11 +1,13 @@
 # Domain 2: Implement AI Solutions Using Microsoft Foundry (55–60%)
 
-> Use this folder to store hands-on notes, portal walkthroughs, and SDK patterns for Domain 2 of **Exam AI-901**.
+> RAG-ready study notes, portal walkthroughs, RBAC notes, and SDK patterns for Domain 2 of **Exam AI-901**.
 
-## Planned Topic Notes
-1. `foundry-portal-and-auth.md` — Projects, endpoints, Entra ID (`DefaultAzureCredential`), RBAC
-2. `model-deployment.md` — Model Catalog, serverless vs. managed deployments, playground testing
-3. `single-agent-solutions.md` — Agent instructions, tools, knowledge sources, Python SDK (`AIProjectClient`)
-4. `multimodal-and-extraction.md` — Speech/voice agents, vision, and Azure Content Understanding
+## Completed Notes
+1. [01-foundry-quickstart-and-vscode.md](01-foundry-quickstart-and-vscode.md) — Local workspace hygiene, VS Code setup, and Microsoft Learn Foundry SDK resources
+2. [02-foundry-poc-models-vs-agents.md](02-foundry-poc-models-vs-agents.md) — `az login`, Project vs. Azure OpenAI endpoints, stateless models vs. stateful agents, multi-turn threads
+3. [03-azure-rbac-and-foundry-access.md](03-azure-rbac-and-foundry-access.md) — Azure RBAC scopes, least privilege, Foundry IQ, Solution Templates, Chat Models, and Dev Packs
 
-*(Tip: Every agent we build in `agents/` will reinforce a real skill tested in Domain 2!)*
+## Upcoming Topic Notes
+4. `04-text-analytics-sdk-lab.md` — Hands-on `azure-ai-textanalytics` lab (sentiment, key phrases, PII redaction)
+5. `05-model-deployment-and-playground.md` — Model Catalog, serverless vs. managed deployments
+6. `06-multimodal-and-content-understanding.md` — Speech/voice agents, vision, and Azure Content Understanding
