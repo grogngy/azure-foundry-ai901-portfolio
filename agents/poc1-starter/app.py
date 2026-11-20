@@ -1,5 +1,5 @@
 """
-Starter conversational client for a Microsoft Foundry agent.
+Interactive multi-turn client for the POC1 starter agent in Microsoft Foundry.
 
 Prerequisites:
     pip install "azure-ai-projects>=2.1.0" "azure-identity>=1.17.0,<2.0.0"
@@ -31,7 +31,6 @@ def main() -> None:
 
     endpoint = os.environ.get("AZURE_FOUNDRY_PROJECT_ENDPOINT")
     agent_name = os.environ.get("AZURE_FOUNDRY_POC_AGENT_NAME", "POC1")
-    user_message = "Hi POC1"
 
     if not endpoint:
         raise RuntimeError(
@@ -46,17 +45,25 @@ def main() -> None:
             allow_preview=True,
         ) as project_client,
     ):
-        # Bind the OpenAI client to the existing Microsoft Foundry agent endpoint.
         openai_client = project_client.get_openai_client(agent_name=agent_name)
-
-        # Create a conversation and send one turn via the Responses API.
         conversation = openai_client.conversations.create()
-        response = openai_client.responses.create(
-            conversation=conversation.id,
-            input=[{"role": "user", "content": user_message}],
-        )
 
-        print(f"Response output: {response.output_text}")
+        print(f"Connected to Microsoft Foundry agent: {agent_name}")
+        print("Type your message and press Enter (type 'exit' or 'quit' to stop).\n")
+
+        while True:
+            user_message = input("You: ").strip()
+            if not user_message:
+                continue
+            if user_message.lower() in {"exit", "quit"}:
+                print("Ending conversation.")
+                break
+
+            response = openai_client.responses.create(
+                conversation=conversation.id,
+                input=[{"role": "user", "content": user_message}],
+            )
+            print(f"\nAgent: {response.output_text}\n")
 
 
 if __name__ == "__main__":

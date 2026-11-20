@@ -40,7 +40,7 @@ Notes folder: [02-foundry-solutions/](02-foundry-solutions/README.md)
   - Selecting, deploying, testing, and configuring foundational LLMs & multimodal models
 - [x] **2.3 Building Single-Agent Solutions (Foundations)**
   - Stateless models vs. stateful Foundry Agents, `get_openai_client`, `conversations.create()`, `responses.create()`
-  - [ ] *Next lab:* Add interactive `while` loop (`input()`) to `agents/poc1-starter/app.py`
+  - [x] Interactive multi-turn `while` loop implemented across `poc1-starter`, `expenses-agent`, and `text-to-image-agent`
 - [ ] **2.4 Text, Speech, Vision & Information Extraction**
   - [ ] *Next lab:* Microsoft Learn `Get started with text analysis in Azure` (`azure-ai-textanalytics`)
   - [ ] Document Intelligence / Azure Content Understanding
@@ -50,7 +50,9 @@ Notes folder: [02-foundry-solutions/](02-foundry-solutions/README.md)
 ---
 
 ## Hands-On Portfolio Milestones (Resume-Ready)
-- [x] **Lab 0:** Starter Foundry text agent (`agents/poc1-starter`)
+- [x] **Lab 0:** Starter Foundry multi-turn text agent (`agents/poc1-starter`)
 - [x] **Lab 1:** Realtime Foundry voice customer support agent (`agents/voice-support-agent`)
-- [ ] **Lab 2 (Planned):** Azure Text Analytics / PII & Sentiment QA Agent (FastAPI-ready for Shipkit.ai)
-- [ ] **Lab 3 (Planned):** RAG-Grounded AI-901 & Finance Policy Assistant powered by `study-notes/ai-901/` in Microsoft Foundry
+- [x] **Lab 2:** Finance Expenses Assistant agent client (`agents/expenses-agent`)
+- [x] **Lab 3:** Text-to-Image POC agent client (`agents/text-to-image-agent`)
+- [ ] **Lab 4 (Planned):** Azure Text Analytics / PII & Sentiment QA Agent (FastAPI-ready for Shipkit.ai)
+- [ ] **Lab 5 (Planned):** RAG-Grounded AI-901 & Finance Policy Assistant powered by `study-notes/ai-901/` in Microsoft Foundry

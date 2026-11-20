@@ -16,10 +16,12 @@
 
 ## Agent Portfolio (Microsoft Foundry)
 
-| Project | Description | Capabilities | Folder |
-| :--- | :--- | :--- | :--- |
-| **POC1 Starter Agent** | Conversational agent using the Microsoft Foundry Projects SDK & Responses API with Entra ID auth. | Text responses, conversation state, `DefaultAzureCredential` | [agents/poc1-starter](agents/poc1-starter/) |
-| **Realtime Voice Support Agent** | Hands-free bidirectional audio customer support agent with live barge-in support. | Realtime voice streaming (PCM16), live transcripts, barge-in | [agents/voice-support-agent](agents/voice-support-agent/) |
+| Project | Interaction Type | Description | Capabilities | Folder |
+| :--- | :--- | :--- | :--- | :--- |
+| **Realtime Voice Support Agent** | Voice | Hands-free bidirectional audio customer support agent with live barge-in. | Realtime voice streaming (PCM16), live transcripts, barge-in | [agents/voice-support-agent](agents/voice-support-agent/) |
+| **Finance Expenses Assistant** | Text | Multi-turn finance/expense assistant built on Microsoft Foundry. | Stateful conversations, finance workflow support, Entra ID auth | [agents/expenses-agent](agents/expenses-agent/) |
+| **Text-to-Image POC Agent** | Text / Multimodal | Interactive prompt agent for image generation workflows in Foundry. | Generative vision workflows, multi-turn Responses API | [agents/text-to-image-agent](agents/text-to-image-agent/) |
+| **POC1 Starter Agent** | Text | Multi-turn conversational baseline using Foundry Projects SDK. | Conversation threads, `DefaultAzureCredential`, `.env` config | [agents/poc1-starter](agents/poc1-starter/) |
 
 *(Roadmap: Wrap Foundry & Azure AI Python agents in FastAPI endpoints to power a modular **Shipkit.ai / Next.js + Supabase** web portfolio.)*
 
@@ -32,7 +34,7 @@ azure-foundry-ai901-portfolio/
 ├── README.md                              # Portfolio overview & project showcase
 ├── GEMINI.md                              # Native persistent Antigravity workspace instructions
 ├── CONTEXT.md                             # Portable project & study memory log
-├── .env.example                           # Safe environment variable template
+├── .env.example                           # Safe environment variable template (4 agents)
 ├── gem-instructions/                      # Optional system prompt for mobile Gemini Gem
 ├── imports/                               # Staging folder for importing new notes
 ├── study-notes/
@@ -44,8 +46,10 @@ azure-foundry-ai901-portfolio/
 │       ├── 02-foundry-solutions/          # Domain 2 notes (Foundry setup, POC, RBAC)
 │       └── practice-quizzes.md            # Practice questions & review log
 └── agents/
-    ├── poc1-starter/                      # Starter Foundry agent client
-    └── voice-support-agent/               # Realtime Foundry voice agent client
+    ├── voice-support-agent/               # Realtime Foundry voice agent client
+    ├── expenses-agent/                    # Multi-turn Finance Expenses agent client
+    ├── text-to-image-agent/               # Multi-turn Text-to-Image POC agent client
+    └── poc1-starter/                      # Multi-turn starter Foundry agent client
 ```
 
 ---
