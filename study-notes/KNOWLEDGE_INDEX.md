@@ -46,6 +46,7 @@ Every study document under `study-notes/ai-901/` follows four RAG-readiness conv
 | `ai901-d2-03` | Azure RBAC & Foundry Resource Permissions | Domain 2 (Security & RBAC) | [03-azure-rbac-and-foundry-access.md](ai-901/02-foundry-solutions/03-azure-rbac-and-foundry-access.md) |
 | `ai901-d2-04` | Azure AI Text Analytics Python SDK Lab (PII, Sentiment & Key Phrases) | Domain 2 (NLP SDK Lab) | [04-text-analytics-sdk-lab.md](ai-901/02-foundry-solutions/04-text-analytics-sdk-lab.md) |
 | `ai901-d2-05` | Plain-English Jargon Decoder: Foundry Architecture, Python Objects & Analyzers | Domain 2 (Architecture & Content Understanding) | [05-foundry-jargon-and-analyzers.md](ai-901/02-foundry-solutions/05-foundry-jargon-and-analyzers.md) |
+| `ai901-d2-06` | AI-901 Master Python SDK Reference (All 6 Core Libraries, Clients & Methods) | Domain 2 (Complete SDK Reference) | [06-ai901-python-sdk-master-reference.md](ai-901/02-foundry-solutions/06-ai901-python-sdk-master-reference.md) |
 
 ---
 
