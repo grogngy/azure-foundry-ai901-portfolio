@@ -43,16 +43,58 @@ last_updated: 2026-11-23
 
 ---
 
-## 2. Python SDK Jargon (Objects, Clients, Methods & Functions)
+## 2. Python SDK Jargon: What Exactly Is an "Object"?
 
-When MeasureUp shows a Python snippet, you do **not** need to memorize syntax—just recognize these 4 concepts:
+> **Key Clarification:** A **Python Object** is **NOT** a saved `.md` file, **NOT** a `.json` file on disk, and **NOT** the cloud API itself. It is a **live bundle in your computer's memory** while your Python script is running that holds **Data/Settings (properties)** + **Action Buttons (methods)** together.
 
-| Python Term | Plain-English Analogy | Example You Already Built |
+### Object vs. Markdown File vs. JSON vs. API
+
+| Term | What It Actually Is | Plain-English Analogy | Example |
+| :--- | :--- | :--- | :--- |
+| **`.md` File** | A saved text document on disk | A **notebook page** | `STUDY_PLAN.md` |
+| **API** | The Azure cloud service listening at a URL | The **bank's call center** | `https://<resource>.services.ai.azure.com/` |
+| **JSON Object (`{...}`)** | Structured `key: value` text sent over HTTPS | A **filled-out paper form** mailed to the API | `{"voice": "alloy", "format": "wav"}` |
+| **Python Object** | A live in-memory bundle inside your running script | A **remote control** holding settings + buttons | `client = TextAnalyticsClient(...)`, `speech_config = SpeechConfig(...)` |
+
+*(Why MeasureUp feels tricky: the exam uses **"object"** in TWO ways — a **Python object** in SDK code like `SpeechConfig`, and a **JSON object `{...}`** in REST API payloads like `audio: {"voice": "alloy", "format": "wav"}`!)*
+
+### Seeing Python Objects Live in Real Code (Annotated)
+
+**Example A — From Your Own Banking QA Lab (`agents/banking-qa-text-analyzer/app.py`):**
+```python
+# 1. CREATE A PYTHON OBJECT (the "remote control" in memory, NOT a file on disk)
+client = TextAnalyticsClient(endpoint=endpoint, credential=credential)
+
+# 2. PRESS AN ACTION BUTTON ("method") ON THAT OBJECT — notice the dot (.) and parentheses ()
+pii_results = client.recognize_pii_entities(sample_tickets)
+
+# 3. READ DATA ("properties") FROM THE RESULT OBJECT AZURE SENT BACK — dot (.) with NO parentheses
+for pii in pii_results:
+    print(pii.redacted_text)   # <-- Property (data stored inside the 'pii' result object)
+    print(pii.is_error)        # <-- Property (True or False)
+```
+
+**Example B — From Your MeasureUp Speech SDK Questions:**
+```python
+# 1. CREATE THE 'SpeechConfig' OBJECT (a settings holder in memory)
+speech_config = speechsdk.SpeechConfig(subscription=key, region=region)
+
+# 2. SET PROPERTIES (settings) ON THAT OBJECT using a dot (.)
+speech_config.speech_synthesis_voice_name = "en-US-AvaMultilingualNeural"
+
+# 3. CREATE A 'SpeechRecognizer' OBJECT and press its action button (method)
+speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
+speech_recognizer.start_continuous_recognition()   # <-- Method (action button with parentheses!)
+```
+
+### Quick 4-Piece Cheat Sheet
+
+| Python Term | Plain-English Analogy | How to Spot It in Exam Code |
 | :--- | :--- | :--- |
-| **Library / SDK Package** | **Toolbox** you install once (`pip install`) | `azure-ai-projects`, `azure-ai-textanalytics` |
-| **Class / Client Object** | **Remote Control** created from the toolbox, connected to your Azure endpoint + credentials | `client = AIProjectClient(endpoint, credential)` or `client = TextAnalyticsClient(endpoint, credential)` |
-| **Method / Function** | **Action Button** on that remote control (always has parentheses `()`) | `client.analyze_sentiment(docs)`, `client.recognize_pii_entities(docs)`, `openai_client.responses.create(...)` |
-| **Result Object / Properties** | **Filled-Out Report Form** returned by Azure; you read fields using a dot `.` | `response.output_text`, `pii.redacted_text`, `sentiment.confidence_scores.negative` |
+| **Library / SDK Package** | **Toolbox** you install once (`pip install`) | `from azure.ai.textanalytics import ...` |
+| **Class / Client Object** | **Remote Control** created in memory | `client = TextAnalyticsClient(...)` |
+| **Property / Attribute** | **Setting or Data Field** on the object | `object.setting` *(dot, NO `()`)* |
+| **Method / Function** | **Action Button** on the object | `object.do_something()` *(dot + `()`)* |
 
 ---
 
