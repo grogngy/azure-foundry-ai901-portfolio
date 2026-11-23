@@ -21,12 +21,12 @@
    - **AI Layer:** **Microsoft Foundry** & Azure AI SDKs (`azure-ai-projects`, `openai`, `azure-ai-textanalytics`, `azure-ai-documentintelligence`)
 
 ## Current Status
-- **Last Updated:** 2026-11-20
+- **Last Updated:** 2026-11-23
+- **Target Exam Date:** **December 12, 2026** (using 1-year **MeasureUp** subscription; reschedulable if <78% on Dec 10 check)
+- **Primary Weak Area Identified on MeasureUp:** Domain 2 (*Implement AI Solutions by Using Microsoft Foundry*) — specifically Python SDK jargon (objects, clients, methods), Foundry architecture, and **Azure Content Understanding Analyzers**.
 - **Live GitHub Repo:** `https://github.com/grogngy/azure-foundry-ai901-portfolio`
 - **Local Repo:** `c:\projects\azure-foundry-ai901-portfolio`
-- **Imported & RAG-Structured Notes (7 total):** Indexed in `study-notes/KNOWLEDGE_INDEX.md`:
-  - `00-foundations-and-roadmap/`: Portfolio Architecture Roadmap, Python SDK Study Plan, Python Virtual Environments, REST APIs & Voice-Agent SaaS
-  - `02-foundry-solutions/`: Foundry Quickstart & VS Code Setup, Foundry POC (Models vs. Agents & Endpoints), Azure RBAC & Foundry Permissions
+- **RAG-Structured Notes (9 total):** Indexed in `study-notes/KNOWLEDGE_INDEX.md` (including `04-text-analytics-sdk-lab.md` and `05-foundry-jargon-and-analyzers.md`).
 - **Existing Foundry Agents Wired Up (All 4 share 1 Foundry Project Endpoint in local `.env`):**
   - `customer-support-agent-wcely` (Voice) → `agents/voice-support-agent/app.py`
   - `expenses-agent-wcely` (Text, multi-turn) → `agents/expenses-agent/app.py`

@@ -7,7 +7,8 @@
 2. [02-foundry-poc-models-vs-agents.md](02-foundry-poc-models-vs-agents.md) — `az login`, Project vs. Azure OpenAI endpoints, stateless models vs. stateful agents, multi-turn threads
 3. [03-azure-rbac-and-foundry-access.md](03-azure-rbac-and-foundry-access.md) — Azure RBAC scopes, least privilege, Foundry IQ, Solution Templates, Chat Models, and Dev Packs
 4. [04-text-analytics-sdk-lab.md](04-text-analytics-sdk-lab.md) — Hands-on `azure-ai-textanalytics` lab (Banking QA PII redaction, sentiment analysis, key phrases)
+5. [05-foundry-jargon-and-analyzers.md](05-foundry-jargon-and-analyzers.md) — Plain-English decoder for Foundry architecture, Python objects/clients/methods, and Azure Content Understanding Analyzers
 
 ## Upcoming Topic Notes
-5. `05-model-deployment-and-playground.md` — Model Catalog, serverless vs. managed deployments
-6. `06-multimodal-and-content-understanding.md` — Speech/voice agents, vision, and Azure Content Understanding
+6. `06-model-deployment-and-playground.md` — Model Catalog, serverless vs. managed deployments
+7. `07-speech-and-vision-workloads.md` — Speech recognition/synthesis, computer vision, and multimodal models

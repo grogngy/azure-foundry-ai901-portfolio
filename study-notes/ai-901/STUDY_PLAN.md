@@ -1,58 +1,68 @@
-# Exam AI-901 Study Plan & Progress Tracker
+# Exam AI-901 Study Plan & 19-Day Action Roadmap (Nov 23 – Dec 12)
 
 - **Exam:** AI-901 — Microsoft Certified: Azure AI Fundamentals
-- **Passing Score:** 700 / 1000
-- **Expiration:** Fundamentals certifications do not expire
+- **Scheduled Exam Date:** **December 12, 2026** *(reschedulable if needed)*
+- **Practice Platform:** **MeasureUp** (1-year subscription — Study Mode + Certification Mode)
+- **Official Microsoft Learn Course:** [Course AI-901T00-A: Introduction to AI in Azure](https://learn.microsoft.com/training/courses/ai-901t00)
+- **Official Exam & Study Guide Page:** [Exam AI-901 Certification Page](https://learn.microsoft.com/credentials/certifications/exams/ai-901/)
 - **RAG Knowledge Index:** [../KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
-- **Target Exam Date:** *(TBD — update once scheduled)*
 
 ---
 
-## Foundations & Architecture (Completed Imports)
-Notes folder: [00-foundations-and-roadmap/](00-foundations-and-roadmap/)
-- [x] Full-stack portfolio roadmap (Shipkit.ai + FastAPI + Supabase + Microsoft Foundry)
-- [x] Python virtual environments (`.venv`) & workspace hygiene
-- [x] REST APIs, HTTP headers, JSON payloads, and Voice-Agent SaaS concepts
-- [x] Identified hands-on Python SDK focus plan (`azure-ai-textanalytics` lab)
+## 19-Day Targeted Action Plan (Fixing Domain 2 Weaknesses First)
+
+> **Rule of Thumb:** Do **not** study randomly. Every session follows 3 steps: **(1) Read 1 plain-English module/note → (2) Decode 1 short Python snippet together → (3) Drill 10–15 MeasureUp Study Mode questions on that exact topic and log every missed term.**
+
+### Week 1 (Nov 23 – Nov 29): Decode Foundry Architecture, SDK Jargon & Analyzers
+* **Step 1 — Days 1–2 (Nov 23–24): Jargon & Architecture Reset (START HERE)**
+  - Read [05-foundry-jargon-and-analyzers.md](02-foundry-solutions/05-foundry-jargon-and-analyzers.md) (Foundry Resource vs. Project, Python Objects/Clients/Methods, and Analyzers).
+  - Review official Microsoft Learn module: *Introduction to Microsoft Foundry* inside [AI-901T00](https://learn.microsoft.com/training/courses/ai-901t00).
+  - **Goal:** Never get tripped up by "project", "endpoint", "client object", "method", or "analyzer" again.
+* **Step 2 — Days 3–4 (Nov 25–26): Azure Content Understanding & Information Extraction**
+  - Learn the 4 **Analyzer** types (`Base`, `RAG`, `Domain-Specific`, `Custom`) and field schemas.
+  - Review Microsoft Learn unit on **Information Extraction / Content Understanding**.
+  - Drill 15 MeasureUp questions specifically on **Content Understanding & Extraction**.
+* **Step 3 — Days 5–7 (Nov 27–29): Foundry Agents, Models & Python SDK Literacy**
+  - Walk line-by-line through your own [agents/expenses-agent/app.py](../../agents/expenses-agent/app.py) and [agents/banking-qa-text-analyzer/app.py](../../agents/banking-qa-text-analyzer/app.py).
+  - Practice identifying the 3 exam snippet clues: **Import → Auth (`DefaultAzureCredential` vs. `AzureKeyCredential`) → Method Call**.
+  - Review Microsoft Learn modules on **Generative AI apps & Single-Agent Solutions in Microsoft Foundry**.
+
+### Week 2 (Nov 30 – Dec 6): Speech, Vision, NLP & Domain 1 Polish
+* **Step 4 — Days 8–9 (Nov 30–Dec 1): Speech & Computer Vision Workloads**
+  - Speech-to-Text, Text-to-Speech, Speech Translation, and Vision/Multimodal image analysis & generation.
+  - Drill MeasureUp questions on Speech & Vision.
+* **Step 5 — Days 10–11 (Dec 2–3): Domain 1 Lock-In (40–45% of Exam)**
+  - Build & review RAG notes in `01-ai-concepts/`: Responsible AI (6 principles), tokens, context windows, temperature/top-p, embeddings, and RAG grounding.
+* **Step 6 — Days 12–14 (Dec 4–6): First Full MeasureUp Diagnostic + Mistake Log**
+  - Take 1 full MeasureUp **Study Mode** test.
+  - Paste every missed/confusing question topic into Antigravity → we turn every weakness into a plain-English flashcard in [practice-quizzes.md](practice-quizzes.md).
+
+### Week 3 (Dec 7 – Dec 12): Certification Mode Readiness & Go/No-Go Check
+* **Step 7 — Days 15–17 (Dec 7–9): Targeted Remediation + Certification Mode #1**
+  - Drill ONLY your weakest Domain 2 sub-topics in MeasureUp.
+  - Take **MeasureUp Certification Mode #1** (target **80%+**).
+* **Step 8 — Days 18–19 (Dec 10–11): Final Readiness Gate (Go / Reschedule Decision)**
+  - Take **MeasureUp Certification Mode #2**.
+  - **Go Decision:** Scoring **85%+** consistently → take **AI-901 on Dec 12** with total confidence!
+  - **Reschedule Decision:** Scoring **<78%** on Dec 10 → reschedule by 7–10 days stress-free using your MeasureUp subscription.
 
 ---
 
-## Domain 1: Identify AI Concepts and Capabilities (40–45%)
-Notes folder: [01-ai-concepts/](01-ai-concepts/README.md)
+## Domain Checklist Tracker
 
-- [ ] **1.1 Responsible AI Principles**
-  - Fairness, Reliability & Safety, Privacy & Security, Inclusiveness, Transparency, Accountability
-  - *Finance/QA lens:* Bias auditing, hallucination testing, PII redaction, compliance guardrails
-- [ ] **1.2 Core Model Concepts & Configuration**
-  - Tokens, context windows, prompts (system vs. user), embeddings, temperature / top-p, grounding (RAG)
-- [ ] **1.3 AI Workloads & Scenarios**
-  - Generative AI vs. Agentic AI (single-agent workflows, tools, memory)
-  - Natural Language Processing (NLP), Speech, Computer Vision, and Information Extraction
+### Foundations & Architecture
+- [x] Full-stack portfolio roadmap (saved for post-AI-901 / AI-102)
+- [x] Python virtual environments (`.venv`) & REST API / JSON basics
+- [x] Plain-English Jargon Decoder & Analyzers guide ([05-foundry-jargon-and-analyzers.md](02-foundry-solutions/05-foundry-jargon-and-analyzers.md))
 
----
+### Domain 1: Identify AI Concepts and Capabilities (40–45%)
+- [ ] **1.1 Responsible AI Principles** (Fairness, Reliability & Safety, Privacy & Security, Inclusiveness, Transparency, Accountability)
+- [ ] **1.2 Core Model Concepts** (Tokens, context windows, prompts, embeddings, temperature/top-p, RAG)
+- [ ] **1.3 AI Workloads** (Generative AI, Agentic AI, NLP, Speech, Computer Vision, Information Extraction)
 
-## Domain 2: Implement AI Solutions Using Microsoft Foundry (55–60%)
-Notes folder: [02-foundry-solutions/](02-foundry-solutions/README.md)
-
-- [x] **2.1 Microsoft Foundry Basics, Setup & Azure RBAC**
-  - Foundry vs. Azure OpenAI endpoints, `az login`, least-privilege Azure RBAC (Foundry IQ, Templates, Models, Dev Packs)
-- [ ] **2.2 Model Catalog & Deployment**
-  - Selecting, deploying, testing, and configuring foundational LLMs & multimodal models
-- [x] **2.3 Building Single-Agent Solutions (Foundations)**
-  - Stateless models vs. stateful Foundry Agents, `get_openai_client`, `conversations.create()`, `responses.create()`
-  - [x] Interactive multi-turn `while` loop implemented across `poc1-starter`, `expenses-agent`, and `text-to-image-agent`
-- [ ] **2.4 Text, Speech, Vision & Information Extraction**
-  - [x] *Lab completed & verified live:* `agents/banking-qa-text-analyzer` (`azure-ai-textanalytics` — chained fail-closed PII redaction, sentiment, key phrases, automated QA leak check)
-  - [ ] Document Intelligence / Azure Content Understanding
-- [ ] **2.5 Reading Basic Python & REST/SDK Snippets**
-  - Imports, `.env` variables, `AIProjectClient`, REST headers/JSON payloads, Entra ID (`DefaultAzureCredential`)
-
----
-
-## Hands-On Portfolio Milestones (Resume-Ready)
-- [x] **Lab 0:** Starter Foundry multi-turn text agent (`agents/poc1-starter`)
-- [x] **Lab 1:** Realtime Foundry voice customer support agent (`agents/voice-support-agent`)
-- [x] **Lab 2:** Finance Expenses Assistant agent client (`agents/expenses-agent`)
-- [x] **Lab 3:** Text-to-Image POC agent client (`agents/text-to-image-agent`)
-- [ ] **Lab 4 (Planned):** Azure Text Analytics / PII & Sentiment QA Agent (FastAPI-ready for Shipkit.ai)
-- [ ] **Lab 5 (Planned):** RAG-Grounded AI-901 & Finance Policy Assistant powered by `study-notes/ai-901/` in Microsoft Foundry
+### Domain 2: Implement AI Solutions Using Microsoft Foundry (55–60%)
+- [x] **2.1 Foundry Architecture, Endpoints & Azure RBAC**
+- [x] **2.2 Single-Agent Solutions** (`poc1-starter`, `expenses-agent`, `text-to-image-agent`, `voice-support-agent`)
+- [x] **2.3 Text Analytics SDK Lab** (`banking-qa-text-analyzer` — chained PII redaction, sentiment, key phrases)
+- [ ] **2.4 Azure Content Understanding & Analyzers** *(Priority Focus — Week 1)*
+- [ ] **2.5 Model Catalog, Deployment & Speech/Vision SDK Literacy**
