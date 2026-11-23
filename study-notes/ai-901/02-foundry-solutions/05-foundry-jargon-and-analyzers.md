@@ -96,6 +96,21 @@ speech_recognizer.start_continuous_recognition()   # <-- Method (action button w
 | **Property / Attribute** | **Setting or Data Field** on the object | `object.setting` *(dot, NO `()`)* |
 | **Method / Function** | **Action Button** on the object | `object.do_something()` *(dot + `()`)* |
 
+### The `tkinter` ↔ Azure SDK Mental Map
+Python's built-in desktop GUI library (`tkinter` — short for *Tk interface*, **not** on AI-901) uses the **exact same object pattern** as Azure AI SDKs:
+
+| Concept | Built-in `tkinter` (Desktop Window) | Azure AI SDK (Cloud Client) |
+| :--- | :--- | :--- |
+| **Library** *(Toolbox)* | `import tkinter as tk` | `from azure.ai.projects import AIProjectClient` |
+| **Class** *(Blueprint)* | `tk.Tk` / `tk.Button` | `AIProjectClient` / `TextAnalyticsClient` / `SpeechRecognizer` |
+| **Object** *(Live instance in RAM)* | `window = tk.Tk()` | `client = TextAnalyticsClient(...)` |
+| **Property** *(Setting/Data — no `()`)* | `window.title` | `response.output_text`, `speech_config.speech_synthesis_voice_name` |
+| **Method** *(Action — has `()`)* | `window.mainloop()` | `openai_client.responses.create(...)`, `client.recognize_pii_entities(...)` |
+
+### Direct Project Endpoint vs. Foundry Agent (When to Use Each)
+* **Call a Foundry Agent (`agent_reference`)** when you want a **reusable assistant** managed centrally in Microsoft Foundry with saved instructions, tools, and stateful threads (`conversations.create()` → `responses.create()`).
+* **Call the Project / Model directly (no Agent)** when your Python app needs **full code-level control** over custom prompt loops, model parameters, structured batch jobs, or stateless one-off calls (`chat.completions.create()`).
+
 ---
 
 ## 3. What Is an "Analyzer"? (Azure Content Understanding)

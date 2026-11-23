@@ -15,7 +15,7 @@ keywords:
   - AI-901
   - knowledge base
 source: curated-index
-last_updated: 2026-11-20
+last_updated: 2026-11-23
 ---
 
 # AI-901 & Microsoft Foundry RAG Knowledge Index
@@ -33,7 +33,7 @@ Every study document under `study-notes/ai-901/` follows four RAG-readiness conv
 
 ---
 
-## Knowledge Base Manifest (7 Imported Notes Organized)
+## Knowledge Base Manifest (10 Study Notes + Practice Quiz Log)
 
 | ID | Title | Domain | File |
 | :--- | :--- | :--- | :--- |
@@ -47,6 +47,7 @@ Every study document under `study-notes/ai-901/` follows four RAG-readiness conv
 | `ai901-d2-04` | Azure AI Text Analytics Python SDK Lab (PII, Sentiment & Key Phrases) | Domain 2 (NLP SDK Lab) | [04-text-analytics-sdk-lab.md](ai-901/02-foundry-solutions/04-text-analytics-sdk-lab.md) |
 | `ai901-d2-05` | Plain-English Jargon Decoder: Foundry Architecture, Python Objects & Analyzers | Domain 2 (Architecture & Content Understanding) | [05-foundry-jargon-and-analyzers.md](ai-901/02-foundry-solutions/05-foundry-jargon-and-analyzers.md) |
 | `ai901-d2-06` | AI-901 Master Python SDK Reference (All 6 Core Libraries, Clients & Methods) | Domain 2 (Complete SDK Reference) | [06-ai901-python-sdk-master-reference.md](ai-901/02-foundry-solutions/06-ai901-python-sdk-master-reference.md) |
+| `ai901-quiz-log` | AI-901 MeasureUp Practice Quizzes & Decoded Flashcards | Domain 2 (Exam Prep Log) | [practice-quizzes.md](ai-901/practice-quizzes.md) |
 
 ---
 
@@ -66,5 +67,5 @@ Every study document under `study-notes/ai-901/` follows four RAG-readiness conv
 * **Dev Hygiene:** Short paths (`C:\projects`), isolated `.venv` per POC managed via terminal, secrets strictly in `.env`.
 
 ### 3. Next Knowledge Gaps to Fill for AI-901
+* **Domain 2 Remaining SDK Drills:** Library #5 (**Azure Content Understanding** — `ContentUnderstandingClient` & 4 Analyzer types) and Library #6 (**Azure AI Vision** — `ImageAnalysisClient` & 7 `VisualFeatures` enums).
 * **Domain 1 (40–45%):** Responsible AI principles (6 pillars), tokens/embeddings/temperature/RAG grounding, vision/NLP/extraction workload comparison.
-* **Domain 2 (55–60%):** Hands-on `azure-ai-textanalytics` lab (*"Create a client application that analyzes text"*), Content Understanding / Document Intelligence, and multi-turn `while` loop upgrade for `POC1`.
