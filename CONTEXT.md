@@ -21,12 +21,12 @@
    - **AI Layer:** **Microsoft Foundry** & Azure AI SDKs (`azure-ai-projects`, `openai`, `azure-ai-textanalytics`, `azure-ai-documentintelligence`)
 
 ## Current Status
-- **Last Updated:** 2026-11-23
+- **Last Updated:** 2026-11-24
 - **Target Exam Date:** **December 12, 2026** (using 1-year **MeasureUp** subscription; reschedulable if <78% on Dec 10 Go/No-Go check)
-- **Primary Weak Area Identified on MeasureUp:** Domain 2 (*Implement AI Solutions by Using Microsoft Foundry*) — specifically Python SDK literacy (objects, clients, methods), Foundry architecture, Speech SDK, and **Azure Content Understanding Analyzers**.
+- **Primary Weak Area Identified on MeasureUp:** Domain 2 (*Implement AI Solutions by Using Microsoft Foundry*) — specifically Python/C# SDK literacy, Foundry tracing/auth patterns, Speech SDK, and **Azure Content Understanding Analyzers** (making rapid progress!).
 - **Live GitHub Repo:** `https://github.com/grogngy/azure-foundry-ai901-portfolio`
 - **Local Repo:** `c:\projects\azure-foundry-ai901-portfolio`
-- **RAG-Structured Notes (10 notes + Practice Quiz Log):** Indexed in `study-notes/KNOWLEDGE_INDEX.md` (including `04-text-analytics-sdk-lab.md`, `05-foundry-jargon-and-analyzers.md`, `06-ai901-python-sdk-master-reference.md`, and `practice-quizzes.md`).
+- **RAG-Structured Notes (10 notes + 9 Decoded MeasureUp Flashcards):** Indexed in `study-notes/KNOWLEDGE_INDEX.md` (including `04-text-analytics-sdk-lab.md`, `05-foundry-jargon-and-analyzers.md`, `06-ai901-python-sdk-master-reference.md`, and `practice-quizzes.md`).
 - **Hands-On Portfolio Apps Wired Up & Verified:**
   - `agents/banking-qa-text-analyzer/app.py` — Live-tested against Azure via passwordless `DefaultAzureCredential()`; hardened with chained fail-closed PII redaction (`recognize_pii_entities()` first) + automated `check_pii_leaks()` assertion.
   - 4 Microsoft Foundry Agents (all share 1 Foundry Project Endpoint in local gitignored `.env`, all syntax-verified):
@@ -36,13 +36,18 @@
     - `POC1` (Text, multi-turn `while` loop) → `agents/poc1-starter/app.py`
 
 ## Session Handoff (Pick Up Here Next Session)
-- **Completed Today (2026-11-23):**
+- **Completed (2026-11-23 – 2026-11-24):**
   - Built and live-tested the hardened Banking QA Text Analyzer lab (`azure-ai-textanalytics`).
-  - Created `05-foundry-jargon-and-analyzers.md` (Foundry architecture, Python Object/`tkinter` mental map, direct Project vs. Agent calls, 4 Content Understanding Analyzer types) and `06-ai901-python-sdk-master-reference.md` (all 6 core AI-901 SDK libraries).
-  - Decoded 4 MeasureUp exam traps in `practice-quizzes.md` (Audio Chat Completions, Long `.wav` Continuous Recognition, SSML `<voice>` override, Private Photo Vision Chat Completions).
-  - Completed interactive SDK walkthrough & drills for **Libraries #1–#4** (`azure-identity`/`azure-core`, `azure-ai-projects` + `openai`, `azure-ai-textanalytics`, `azure-cognitiveservices-speech`).
+  - Created `05-foundry-jargon-and-analyzers.md` and `06-ai901-python-sdk-master-reference.md` (all 6 core AI-901 SDK libraries).
+  - Completed interactive SDK walkthrough & drills for **Libraries #1–#4** (`azure-identity`/`azure-core`, `azure-ai-projects` + `openai`, `azure-ai-textanalytics`, `azure-cognitiveservices-speech`) and deep-dived **Library #5 (Azure Content Understanding)** via live MeasureUp questions.
+  - Decoded **9 high-difficulty MeasureUp flashcards** in `practice-quizzes.md`, adding 5 new ones on 2026-11-23/24:
+    - **#5:** `FileSearchTool` citations (`annotation.file_citation.file_id`) & run steps (`RunAdditionalFieldList.FILE_SEARCH_CONTENTS`).
+    - **#6:** Opt-in OpenTelemetry tracing + Application Insights (`execute_tool` span + `tool.call.arguments`).
+    - **#7:** Passwordless Auth 3-Part Formula (`TokenCredential` vs. API Key `String` vs. `AuthorizationToken`, RBAC roles, **Custom Subdomain** requirement, `HTTP 401` vs. `403`, Speech `FromEndpoint(Uri, TokenCredential)` & Vision 401 fix).
+    - **#8:** Content Understanding 3-Switch Rule (`returnDetails: true` for `cameraShotTimesMs`, `enableSegment` + `contentCategories` for topic chapters, 4-Base-Analyzer-only rule for `baseAnalyzerId`).
+    - **#9:** Content Understanding REST `202` polling & typed JSON response paths (`result.contents[0].fields.AmountDue.valueObject.Amount.valueNumber`), plus `camelCase` envelope vs. `PascalCase` schema fields and SDK-to-JSON translation.
 - **Next Milestones (In Order — Keep AI-901 Focused):**
-  1. **Resume SDK Walkthrough at Library #5 & #6:** Drill **#5 Azure Content Understanding** (`ContentUnderstandingClient`, `begin_analyze`, Base/RAG/Domain-Specific/Custom Analyzers) and **#6 Azure AI Vision** (`ImageAnalysisClient`, `analyze`/`analyze_from_url`, all 7 `VisualFeatures` enums).
+  1. **Finish SDK Walkthrough at Library #6 (Azure AI Vision):** Drill `ImageAnalysisClient`, `analyze`/`analyze_from_url`, and all 7 `VisualFeatures` enums (`CAPTION`, `DENSE_CAPTIONS`, `TAGS`, `OBJECTS`, `PEOPLE`, `READ`, `SMART_CROPS`).
   2. **Complete Domain 1 RAG Study Notes** under `study-notes/ai-901/01-ai-concepts/` (Responsible AI 6 pillars, tokens/embeddings/temperature/RAG grounding, AI workloads).
   3. **Run MeasureUp Study Mode & Certification Mode Drills** toward the **Dec 10 Go/No-Go gate** (85%+ = Go for Dec 12).
   4. *(Phase 2 — Deferred Until After AI-901)*: Wrap Foundry agents in **FastAPI** + Next.js (**Shipkit.ai**) + **Supabase**.

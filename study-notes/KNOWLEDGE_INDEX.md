@@ -15,7 +15,7 @@ keywords:
   - AI-901
   - knowledge base
 source: curated-index
-last_updated: 2026-11-23
+last_updated: 2026-11-24
 ---
 
 # AI-901 & Microsoft Foundry RAG Knowledge Index
@@ -67,5 +67,5 @@ Every study document under `study-notes/ai-901/` follows four RAG-readiness conv
 * **Dev Hygiene:** Short paths (`C:\projects`), isolated `.venv` per POC managed via terminal, secrets strictly in `.env`.
 
 ### 3. Next Knowledge Gaps to Fill for AI-901
-* **Domain 2 Remaining SDK Drills:** Library #5 (**Azure Content Understanding** — `ContentUnderstandingClient` & 4 Analyzer types) and Library #6 (**Azure AI Vision** — `ImageAnalysisClient` & 7 `VisualFeatures` enums).
+* **Domain 2 Remaining SDK Drill:** Library #6 (**Azure AI Vision** — `ImageAnalysisClient` & 7 `VisualFeatures` enums). *(Library #5 Content Understanding rules, Entra ID Custom Subdomain/TokenCredential auth, OpenTelemetry tracing, and `FileSearchTool` citations are now logged as Flashcards #5–#9 in `practice-quizzes.md`.)*
 * **Domain 1 (40–45%):** Responsible AI principles (6 pillars), tokens/embeddings/temperature/RAG grounding, vision/NLP/extraction workload comparison.

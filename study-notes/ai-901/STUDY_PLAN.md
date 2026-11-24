@@ -64,5 +64,5 @@
 - [x] **2.1 Foundry Architecture, Endpoints & Azure RBAC**
 - [x] **2.2 Single-Agent Solutions** (`poc1-starter`, `expenses-agent`, `text-to-image-agent`, `voice-support-agent`)
 - [x] **2.3 Text Analytics SDK Lab** (`banking-qa-text-analyzer` — chained PII redaction, sentiment, key phrases)
-- [ ] **2.4 Azure Content Understanding & Analyzers** *(Priority Focus — Week 1)*
-- [ ] **2.5 Model Catalog, Deployment & Speech/Vision SDK Literacy**
+- [x] **2.4 Azure Content Understanding & Analyzers** *(4 analyzer types, 3-switch rule, REST `202` polling & typed JSON paths logged in `practice-quizzes.md`)*
+- [ ] **2.5 Model Catalog, Deployment & Vision SDK Literacy** *(Library #6 `ImageAnalysisClient` + 7 `VisualFeatures` next)*
