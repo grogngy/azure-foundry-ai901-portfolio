@@ -1,6 +1,6 @@
 # Microsoft Foundry AI Agent Portfolio & AI-901 Study Hub
 
-> **Focus:** Practical AI agent development, RAG knowledge engineering, Responsible AI governance, and quality assurance on **Microsoft Azure AI Foundry** — combining Banking, Finance, and IT QA experience with hands-on generative & agentic AI engineering.
+> **Focus:** Practical AI agent prototyping, RAG knowledge organization, Responsible AI governance, and quality assurance on **Microsoft Azure AI Foundry** — combining Banking, Finance, and IT QA experience with low-code, Python SDK, and AI-assisted solution building.
 
 ---
 
